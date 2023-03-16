@@ -1,0 +1,96 @@
+{
+    "name": "InputSystem",
+    "maps": [
+        {
+            "name": "Interaction",
+            "id": "8366ee7f-f581-44d9-9c42-384ebc5cf66a",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "1d60b015-1f51-4566-877f-83ef81d9f27a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f991bedd-39f4-423f-8050-f7e85041e578",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Move",
+            "id": "61eb74d3-92fe-4095-8fe4-eaa96fb43481",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "96f33f21-b7d8-46ee-8148-04f299e6ebae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a9f82023-3ee6-40bd-8471-d79447def11e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Attack",
+            "id": "77d35efb-989f-4d7e-8152-a4b2244020fa",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "94a848e1-eb84-4d39-86e8-691028c7c02d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6afd757c-e32b-449f-80c8-7cf9b51a8397",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "PC",
+            "bindingGroup": "PC",
+            "devices": []
+        }
+    ]
+}
