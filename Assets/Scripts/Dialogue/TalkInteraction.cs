@@ -12,7 +12,8 @@ public class TalkInteraction : InteractionHandler
     [SerializeField] private TextAsset _inkJsonAsset;
     [SerializeField] private TMP_Text _textField;
     [SerializeField] private GameObject _dialogue;
-    [SerializeField] private VerticalLayoutGroup _choiceButtonContainer;
+    [SerializeField] private VerticalLayoutGroup _choiceButtonContainerLeft;
+    [SerializeField] private VerticalLayoutGroup _choiceButtonContainerRight;
     [SerializeField] private Button _choiceBtnPref;
 
     [SerializeField] private Color _normalTextColor;
@@ -28,17 +29,14 @@ public class TalkInteraction : InteractionHandler
 
         GameStateController.Instance.ChangeGameState(GameStateController.GameState.Dialogue);
 
-        //print("I TALK! I TAAALK!");
         _dialogue.gameObject.SetActive(true);
         DisplayNextLine();
-        // OnDialogueStart?.Invoke();
     }
 
     private void DisplayNextLine()
     {
         if (!_story.canContinue && _story.currentChoices.Count == 0)
         {
-            //  OnDialogueStop?.Invoke();
             _dialogue.gameObject.SetActive(false);
             GameStateController.Instance.ChangeGameState(GameStateController.GameState.Normal);
             _story = null;
@@ -61,19 +59,56 @@ public class TalkInteraction : InteractionHandler
     private void DisplayChoices()
     {
         // checks if choices are already being displaye
-        if (_choiceButtonContainer.GetComponentsInChildren<Button>().Length > 0) return;
+       // if (_choiceButtonContainerLeft.GetComponentsInChildren<Button>().Length > 0 && _choiceButtonContainerRight.GetComponentsInChildren<Button>().Length > 0) return;
+
+        Button[] ButtonLeftBlock = _choiceButtonContainerLeft.GetComponentsInChildren<Button>();
+        Button[] ButtonRightBlock = _choiceButtonContainerRight.GetComponentsInChildren<Button>();
+
+        if (ButtonLeftBlock.Length > 0 && ButtonRightBlock.Length > 0) return;
 
         for (int i = 0; i < _story.currentChoices.Count; i++) // iterates through all choices
         {
 
             var choice = _story.currentChoices[i];
-            var button = CreateChoiceButton(choice.text); // creates a choice button
+            if (_story.currentTags.Contains("tactful"))
+            {
+                ButtonRightBlock[0].gameObject.SetActive(true);
+                ButtonRightBlock[0].GetComponentInChildren<TMP_Text>().text = choice.text;
+                ButtonRightBlock[0].onClick.AddListener(() => OnClickChoiceButton(choice));
+            } 
+            else if (_story.currentTags.Contains("sarcasm") || _story.currentTags.Contains("trick"))
+            {
+                ButtonRightBlock[1].gameObject.SetActive(true);
+                ButtonRightBlock[1].GetComponentInChildren<TMP_Text>().text = choice.text;
+                ButtonRightBlock[1].onClick.AddListener(() => OnClickChoiceButton(choice));
+            }
+            else if (_story.currentTags.Contains("straightforwardness"))
+            {
+                ButtonRightBlock[2].gameObject.SetActive(true);
+                ButtonRightBlock[2].GetComponentInChildren<TMP_Text>().text = choice.text;
+                ButtonRightBlock[2].onClick.AddListener(() => OnClickChoiceButton(choice));
+            }
+            else if (_story.currentTags.Contains("insight") || _story.currentTags.Contains("knowledge") || _story.currentTags.Contains("satellite") || _story.currentTags.Contains("flirting"))
+            {
+                ButtonLeftBlock[0].gameObject.SetActive(true);
+                ButtonLeftBlock[0].GetComponentInChildren<TMP_Text>().text = choice.text;
+                ButtonLeftBlock[0].onClick.AddListener(() => OnClickChoiceButton(choice));
+            }
+            else if (_story.currentTags.Contains("straightforwardness"))
+            {
+                ButtonLeftBlock[0].gameObject.SetActive(true);
+                ButtonLeftBlock[0].GetComponentInChildren<TMP_Text>().text = choice.text;
+                ButtonLeftBlock[0].onClick.AddListener(() => OnClickChoiceButton(choice));
+            }
 
-            button.onClick.AddListener(() => OnClickChoiceButton(choice));
+
+            //           var button = CreateChoiceButton(choice.text); // creates a choice button
+
+                //  button.onClick.AddListener(() => OnClickChoiceButton(choice));
         }
     }
 
-    Button CreateChoiceButton(string text)
+ /*   Button CreateChoiceButton(string text)
     {
         // creates the button from a prefab
         var choiceButton = Instantiate(_choiceBtnPref);
@@ -84,7 +119,7 @@ public class TalkInteraction : InteractionHandler
         buttonText.text = text;
 
         return choiceButton;
-    }
+    }*/
     void OnClickChoiceButton(Choice choice)
     {
         _story.ChooseChoiceIndex(choice.index); // tells ink which choice was selected
@@ -93,12 +128,15 @@ public class TalkInteraction : InteractionHandler
     }
     void RefreshChoiceView()
     {
-        if (_choiceButtonContainer != null)
+        
+        foreach (var button in _choiceButtonContainerLeft.GetComponentsInChildren<Button>())
+         {
+            button.gameObject.SetActive(false);
+         }
+
+        foreach (var button in _choiceButtonContainerRight.GetComponentsInChildren<Button>())
         {
-            foreach (var button in _choiceButtonContainer.GetComponentsInChildren<Button>())
-            {
-                Destroy(button.gameObject);
-            }
+            button.gameObject.SetActive(false);
         }
     }
 
