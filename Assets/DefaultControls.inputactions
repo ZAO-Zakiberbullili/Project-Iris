@@ -70,6 +70,43 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                    "name": "",
+                    "id": "e7f8f14f-62a1-4535-8d44-2a48f3ab55a9",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+        {
+            "name": "Menu",
+            "id": "adea0b5b-0ac4-4dd5-813c-271ce943ac04",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "e6a10d2a-20be-4357-b979-b0c66b6f9931",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e7f8f14f-62a1-4535-8d44-2a48f3ab55a9",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
