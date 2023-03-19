@@ -1673,6 +1673,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e6a10d2a-20be-4357-b979-b0c66b6f9931
     m_ActionName: Menu/Escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b591c953-3bee-4fda-ac48-63d905efbf12
+    m_ActionName: Movement/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Menu
