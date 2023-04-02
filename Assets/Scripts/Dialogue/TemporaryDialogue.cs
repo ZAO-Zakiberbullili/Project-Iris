@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using Ink.Runtime;
-using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Ink.Runtime;
+
 public class TemporaryDialogue : InteractionHandler
 {
     [SerializeField] private TextAsset _inkJsonAsset;
