@@ -996,7 +996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362177028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.22, y: -1.17, z: 0}
+  m_LocalPosition: {x: -6.04, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1185,14 +1185,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e632a6031815556428cf1030167cfc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inkJsonAsset: {fileID: 0}
-  _textField: {fileID: 0}
-  _dialogue: {fileID: 0}
-  _choiceButtonContainerLeft: {fileID: 0}
-  _choiceButtonContainerRight: {fileID: 0}
-  _choiceBtnPref: {fileID: 0}
-  _normalTextColor: {r: 0, g: 0, b: 0, a: 0}
-  _thoughtTextColor: {r: 0, g: 0, b: 0, a: 0}
+  _inkJsonAsset: {fileID: 4900000, guid: 5b4dc667da27b0a4f8c23b446a5bb24a, type: 3}
+  _textField: {fileID: 623338779}
+  _dialogue: {fileID: 74334260}
+  _choiceButtonContainerLeft: {fileID: 651380074}
+  _choiceButtonContainerRight: {fileID: 1455095571}
+  _normalTextColor: {r: 0, g: 0, b: 0, a: 1}
+  _thoughtTextColor: {r: 0.78039217, g: 0, b: 0, a: 1}
 --- !u!50 &379997073
 Rigidbody2D:
   serializedVersion: 4
@@ -1540,7 +1539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 115.90857, y: -47.214783}
+  m_AnchoredPosition: {x: 115.9086, y: -47.214783}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &507253116
@@ -1960,6 +1959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 711111735}
   - component: {fileID: 711111736}
+  - component: {fileID: 711111737}
   m_Layer: 0
   m_Name: Detector
   m_TagString: Untagged
@@ -1992,7 +1992,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2008,6 +2008,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 1
+--- !u!114 &711111737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711111734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba40853b9f47b1941b06b809221ff596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 362177033}
+  _interactionHandler: {fileID: 379997072}
 --- !u!1 &848784088
 GameObject:
   m_ObjectHideFlags: 0
