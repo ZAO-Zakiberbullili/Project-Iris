@@ -16,5 +16,8 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         transform.position += Time.deltaTime * _moveSpeed * new Vector3(_currentMove.x, _currentMove.y, 0f);
+        
+        Game.current.player.x = transform.position.x;
+        Game.current.player.y = transform.position.y;
     }
 }
