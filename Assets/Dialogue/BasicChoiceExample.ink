@@ -5,45 +5,47 @@
 
  
 === MainChoices ===
-    *** I`m soo tactic #tactic
+    + [I`nm soo tactic #tactic]
         Say smth tactic
-        ->END
-    *** I`m so sarcastic #sarcastic
+        ->EXIT
+    + [I`m so sarcastic #sarcastic]
         Say smth sarcastic
-        ->END
-    *** I`m so direct #direct
+        ->EXIT
+    + [I`m so direct #direct]
         Sat smth direct
-        -> END
-    *** Another input #another
+        -> EXIT
+    + [Another input #another]
         -> anotherChoices
-    *** Questions #asking
+    + [Questions #asking]
         -> questions
     
     
 === anotherChoices ===
-    *** Insight #insight
+    + [Insight #insight]
         Say insight
         -> anotherChoices
-    *** Sattellite #sattellite
+    + [Sattellite #sattellite]
         say sattelite
         -> anotherChoices
-    *** Flirt #flirt
+    + [Flirt #flirt]
         go flirt
         -> anotherChoices
-    *** Back #back
+    + [Back #back]
         -> MainChoices
     
 === questions ===
-    *** Question ONE #question
+    * [Question ONE #question]
         first question
         -> questions
-    *** Question TWO #question
+    * [Question TWO #question]
         second question
         -> questions
-    *** Question THREE #question
+    * [Question THREE #question]
         third question
         -> questions
-    *** Back #back
+    + [Back #back]
         -> MainChoices
-    
 
+
+=== EXIT ===
+   ->END

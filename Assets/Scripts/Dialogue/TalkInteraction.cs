@@ -6,11 +6,7 @@ using UnityEngine.UI;
 
 public class TalkInteraction : InteractionHandler
 {
-    //TODO
-
-    //action for change choices menus
-    //create button class with handler, what was unsubscribe from onclick after call
-    //create method on button class, what can subscribe onclick
+  
 
 
     // public Action OnDialogueStart;
@@ -27,7 +23,7 @@ public class TalkInteraction : InteractionHandler
     [SerializeField] private Color _thoughtTextColor;
 
     private Story _story;
-
+    
 
     override public void Interaction()
     {
@@ -40,6 +36,13 @@ public class TalkInteraction : InteractionHandler
         _dialogue.gameObject.SetActive(true);
         DisplayNextLine();
     }
+
+    private void FixedUpdate()
+    {
+        if (_story && _story.currentChoices.Count > 0)
+            DisplayNextLine();
+    }
+
 
     private void DisplayNextLine()
     {
@@ -81,14 +84,21 @@ public class TalkInteraction : InteractionHandler
         //print(ButtonLeftBlock.Length);
 
         //if (ButtonLeftBlock.Length > 0 && ButtonRightBlock.Length > 0) return;
+        for (int i = 0; i < 3; i++)
+        {
+            ButtonRightBlock[i].onClick.RemoveAllListeners();
+            ButtonLeftBlock[i].onClick.RemoveAllListeners();
+        }
+
 
         int questionCounter = 0;
         int satteliteCounter = 0;
         print(_story.currentChoices.Count);
         for (int i = 0; i < _story.currentChoices.Count; i++) // iterates through all choices
         {
-
+            
             Choice choice = _story.currentChoices[i];
+
 
            // print("" + choice.tags);
 
