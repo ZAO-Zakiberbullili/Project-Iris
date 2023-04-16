@@ -208,6 +208,10 @@ public class TalkInteraction : InteractionHandler
             selectLeftBlock[i].gameObject.SetActive(false);
             selectRightBlock[i].gameObject.SetActive(false);
 
+
+            selectHoverLeftBlock[i].gameObject.SetActive(false);
+            selectHoverRightBlock[i].gameObject.SetActive(false);
+
             ButtonRightBlock[i].gameObject.SetActive(false);
             ButtonLeftBlock[i].gameObject.SetActive(false);
         }
