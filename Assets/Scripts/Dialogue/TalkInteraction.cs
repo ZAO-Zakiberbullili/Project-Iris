@@ -6,34 +6,53 @@ using UnityEngine.UI;
 
 public class TalkInteraction : InteractionHandler
 {
-  
-
-
-    // public Action OnDialogueStart;
-    // public Action OnDialogueStop;
-
     [SerializeField] private TextAsset _inkJsonAsset;
     [SerializeField] private TMP_Text _textField;
     [SerializeField] private GameObject _dialogue;
-    [SerializeField] private VerticalLayoutGroup _choiceButtonContainerLeft;
-    [SerializeField] private VerticalLayoutGroup _choiceButtonContainerRight;
-   // [SerializeField] private Button _choiceBtnPref;
+    [SerializeField] private GameObject _choiceButtonContainerLeft;
+    [SerializeField] private GameObject _choiceButtonContainerRight;
+
+    [SerializeField] private GameObject _leftSelectContainer;
+    [SerializeField] private GameObject _rightSelectContainer;
+
+    [SerializeField] private GameObject _leftSelectHoverContainer;
+    [SerializeField] private GameObject _rightSelectHoverContainer;
+
 
     [SerializeField] private Color _normalTextColor;
     [SerializeField] private Color _thoughtTextColor;
 
+    private Image[] selectLeftBlock;
+    private Image[] selectRightBlock;
+    private Image[] selectHoverLeftBlock;
+    private Image[] selectHoverRightBlock;
+
+    private Button[] ButtonLeftBlock;
+    private Button[] ButtonRightBlock;
+    const int BLOCK_LENGTH = 3;
+
     private Story _story;
-    
+
+
+    public void Start()
+    {
+        selectLeftBlock = _leftSelectContainer.GetComponentsInChildren<Image>(true);
+        selectRightBlock = _rightSelectContainer.GetComponentsInChildren<Image>(true);
+
+        selectHoverLeftBlock = _leftSelectHoverContainer.GetComponentsInChildren<Image>(true);
+        selectHoverRightBlock = _rightSelectHoverContainer.GetComponentsInChildren<Image>(true);
+
+        ButtonLeftBlock = _choiceButtonContainerLeft.GetComponentsInChildren<Button>(true);
+        ButtonRightBlock = _choiceButtonContainerRight.GetComponentsInChildren<Button>(true);
+    }
 
     override public void Interaction()
     {
-        //print("try");
+      
         if (!_story)
             _story = new Story(_inkJsonAsset.text);
         
         // GameStateController.Instance.ChangeGameState(GameStateController.GameState.Dialogue);
-
-        _dialogue.gameObject.SetActive(true);
         DisplayNextLine();
     }
 
@@ -49,7 +68,6 @@ public class TalkInteraction : InteractionHandler
         
         if (!_story.canContinue && _story.currentChoices.Count == 0)
         {
-           // print("StopStory");
             _dialogue.gameObject.SetActive(false);
             GameStateController.Instance.ChangeGameState(GameStateController.GameState.Normal);
             _story = null;
@@ -62,87 +80,109 @@ public class TalkInteraction : InteractionHandler
             string text = _story.Continue(); // gets next line
             text = text?.Trim(); // removes white space from text
             _textField.text = text; // displays new text
-            //print("text");
-            ApplyStyling();
+
+            if (text.Equals(""))
+            {
+                _dialogue.gameObject.SetActive(false); 
+            } else
+            {
+                _dialogue.gameObject.SetActive(true);
+                ApplyStyling();
+            }
+            
         }
         else if (_story.currentChoices.Count > 0)
         {
-           // print("choice");
             DisplayChoices();
         }
     }
 
     private void DisplayChoices()
     {
-        // checks if choices are already being displaye
-        // if (_choiceButtonContainerLeft.GetComponentsInChildren<Button>().Length > 0 && _choiceButtonContainerRight.GetComponentsInChildren<Button>().Length > 0) return;
-
-
-
-        Button[] ButtonLeftBlock = _choiceButtonContainerLeft.GetComponentsInChildren<Button>(true);
-        Button[] ButtonRightBlock = _choiceButtonContainerRight.GetComponentsInChildren<Button>(true);
-        //print(ButtonLeftBlock.Length);
-
-        //if (ButtonLeftBlock.Length > 0 && ButtonRightBlock.Length > 0) return;
-        for (int i = 0; i < 3; i++)
+       for (int i = 0; i < BLOCK_LENGTH; i++)
         {
+            ButtonRightBlock[i].GetComponent<HoverChecker>().OnButtonHover -= HoverHandler;
+            ButtonLeftBlock[i].GetComponent<HoverChecker>().OnButtonHover -= HoverHandler;
+
+            ButtonRightBlock[i].GetComponent<HoverChecker>().OnButtonHover -= HoverEndHandler;
+            ButtonLeftBlock[i].GetComponent<HoverChecker>().OnButtonHover -= HoverEndHandler;
+
             ButtonRightBlock[i].onClick.RemoveAllListeners();
             ButtonLeftBlock[i].onClick.RemoveAllListeners();
-        }
+        } 
 
 
         int questionCounter = 0;
         int satteliteCounter = 0;
         print(_story.currentChoices.Count);
-        for (int i = 0; i < _story.currentChoices.Count; i++) // iterates through all choices
+        for (int i = 0; i < _story.currentChoices.Count; i++) 
         {
             
             Choice choice = _story.currentChoices[i];
 
-
-           // print("" + choice.tags);
-
-           // print(choice.tags);
-
-
             if (choice.tags.Contains("tactic") || choice.tags.Contains("sattellite") && satteliteCounter == 1)
             {
-                //print("ButtonRightBlock[0]");
+                ButtonRightBlock[0].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
+                ButtonRightBlock[0].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
+
+                selectRightBlock[0].gameObject.SetActive(true);
+
                 ButtonRightBlock[0].gameObject.SetActive(true);
                 ButtonRightBlock[0].GetComponentInChildren<TMP_Text>().text = choice.text;
                 ButtonRightBlock[0].onClick.AddListener(() => OnClickChoiceButton(choice));
             } 
             else if (choice.tags.Contains("sarcastic") || choice.tags.Contains("back"))
             {
-                //print("ButtonRightBlock[1]");
+                ButtonRightBlock[1].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
+                ButtonRightBlock[1].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
+
+                selectRightBlock[1].gameObject.SetActive(true);
+
                 ButtonRightBlock[1].gameObject.SetActive(true);
                 ButtonRightBlock[1].GetComponentInChildren<TMP_Text>().text = choice.text;
                 ButtonRightBlock[1].onClick.AddListener(() => OnClickChoiceButton(choice));
             }
             else if (choice.tags.Contains("direct"))
             {
-                //print("ButtonRightBlock[2]");
+                ButtonRightBlock[2].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
+                ButtonRightBlock[2].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
+
+                selectRightBlock[2].gameObject.SetActive(true);
+
                 ButtonRightBlock[2].gameObject.SetActive(true);
                 ButtonRightBlock[2].GetComponentInChildren<TMP_Text>().text = choice.text;
                 ButtonRightBlock[2].onClick.AddListener(() => OnClickChoiceButton(choice));
             }
             else if (choice.tags.Contains("insight") || choice.tags.Contains("another") || choice.tags.Contains("question") && questionCounter == 0)
             {
-                print("ButtonLeftBlock[0]");
+                ButtonLeftBlock[0].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
+                ButtonLeftBlock[0].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
+
+
+                selectLeftBlock[0].gameObject.SetActive(true);
+
                 ButtonLeftBlock[0].gameObject.SetActive(true);
                 ButtonLeftBlock[0].GetComponentInChildren<TMP_Text>().text = choice.text;
                 ButtonLeftBlock[0].onClick.AddListener(() => OnClickChoiceButton(choice));
             }
             else if (choice.tags.Contains("sattellite") && satteliteCounter == 0 || choice.tags.Contains("asking") || choice.tags.Contains("question") && questionCounter == 1)
             {
-                //print("ButtonLeftBlock[1]");
+                ButtonLeftBlock[1].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
+                ButtonLeftBlock[1].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
+
+                selectLeftBlock[1].gameObject.SetActive(true);
+
                 ButtonLeftBlock[1].gameObject.SetActive(true);
                 ButtonLeftBlock[1].GetComponentInChildren<TMP_Text>().text = choice.text;
                 ButtonLeftBlock[1].onClick.AddListener(() => OnClickChoiceButton(choice));
             }
             else if (choice.tags.Contains("flirt") || choice.tags.Contains("question") && questionCounter == 2)
             {
-                //print("ButtonLeftBlock[2]");
+                ButtonLeftBlock[2].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
+                ButtonLeftBlock[2].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
+
+                selectLeftBlock[2].gameObject.SetActive(true);
+
                 ButtonLeftBlock[2].gameObject.SetActive(true);
                 ButtonLeftBlock[2].GetComponentInChildren<TMP_Text>().text = choice.text;
                 ButtonLeftBlock[2].onClick.AddListener(() => OnClickChoiceButton(choice));
@@ -152,25 +192,9 @@ public class TalkInteraction : InteractionHandler
                 questionCounter++;
             if (choice.tags.Contains("tactic"))
                 satteliteCounter++;
-
-            //           var button = CreateChoiceButton(choice.text); // creates a choice button
-
-            //  button.onClick.AddListener(() => OnClickChoiceButton(choice));
         }
     }
 
- /*   Button CreateChoiceButton(string text)
-    {
-        // creates the button from a prefab
-        var choiceButton = Instantiate(_choiceBtnPref);
-        choiceButton.transform.SetParent(_choiceButtonContainer.transform, false);
-
-        // sets text on the button
-        var buttonText = choiceButton.GetComponentInChildren<TMP_Text>();
-        buttonText.text = text;
-
-        return choiceButton;
-    }*/
     void OnClickChoiceButton(Choice choice)
     {
         _story.ChooseChoiceIndex(choice.index); // tells ink which choice was selected
@@ -179,18 +203,69 @@ public class TalkInteraction : InteractionHandler
     }
     void RefreshChoiceView()
     {
-        
-        foreach (var button in _choiceButtonContainerLeft.GetComponentsInChildren<Button>())
-         {
-            button.gameObject.SetActive(false);
-         }
-
-        foreach (var button in _choiceButtonContainerRight.GetComponentsInChildren<Button>())
+        for (int i = 0; i < BLOCK_LENGTH; i++)
         {
-            button.gameObject.SetActive(false);
+            selectLeftBlock[i].gameObject.SetActive(false);
+            selectRightBlock[i].gameObject.SetActive(false);
+
+            ButtonRightBlock[i].gameObject.SetActive(false);
+            ButtonLeftBlock[i].gameObject.SetActive(false);
         }
     }
 
+    private void HoverHandler(int buttonNumber, int side)
+    {
+        Image[] buttonContainer;
+        Image[] buttonHoverContainer;
+
+        switch (side)
+        {
+            case 0:
+            {
+                buttonContainer = selectLeftBlock;
+                buttonHoverContainer = selectHoverLeftBlock;
+                break;
+            }
+            case 1:
+            {
+                buttonContainer = selectRightBlock;
+                buttonHoverContainer = selectHoverRightBlock;
+                break;
+            }
+            default:
+                return;
+        }
+
+        buttonContainer[buttonNumber].gameObject.SetActive(false);
+        buttonHoverContainer[buttonNumber].gameObject.SetActive(true);
+    }
+
+    private void HoverEndHandler(int buttonNumber, int side)
+    {
+        Image[] buttonContainer;
+        Image[] buttonHoverContainer;
+
+        switch (side)
+        {
+            case 0:
+                {
+                    buttonContainer = selectLeftBlock;
+                    buttonHoverContainer = selectHoverLeftBlock;
+                    break;
+                }
+            case 1:
+                {
+                    buttonContainer = selectRightBlock;
+                    buttonHoverContainer = selectHoverRightBlock;
+                    break;
+                }
+            default:
+                return;
+        }
+
+        buttonContainer[buttonNumber].gameObject.SetActive(true);
+        buttonHoverContainer[buttonNumber].gameObject.SetActive(false);
+    }
 
     private void ApplyStyling()
     {
