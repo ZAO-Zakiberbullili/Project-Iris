@@ -119,73 +119,49 @@ public class TalkInteraction : InteractionHandler
         {
             
             Choice choice = _story.currentChoices[i];
-
+            Button buttonBlock = null;
+            Image selectBlock = null;
             if (choice.tags.Contains("tactic") || choice.tags.Contains("sattellite") && satteliteCounter == 1)
             {
-                ButtonRightBlock[0].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
-                ButtonRightBlock[0].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
-
-                selectRightBlock[0].gameObject.SetActive(true);
-
-                ButtonRightBlock[0].gameObject.SetActive(true);
-                ButtonRightBlock[0].GetComponentInChildren<TMP_Text>().text = choice.text;
-                ButtonRightBlock[0].onClick.AddListener(() => OnClickChoiceButton(choice));
-            } 
+                buttonBlock = ButtonRightBlock[0];
+                selectBlock = selectRightBlock[0];
+            }
             else if (choice.tags.Contains("sarcastic") || choice.tags.Contains("back"))
             {
-                ButtonRightBlock[1].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
-                ButtonRightBlock[1].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
-
-                selectRightBlock[1].gameObject.SetActive(true);
-
-                ButtonRightBlock[1].gameObject.SetActive(true);
-                ButtonRightBlock[1].GetComponentInChildren<TMP_Text>().text = choice.text;
-                ButtonRightBlock[1].onClick.AddListener(() => OnClickChoiceButton(choice));
+                buttonBlock = ButtonRightBlock[1];
+                selectBlock = selectRightBlock[1];
             }
             else if (choice.tags.Contains("direct"))
             {
-                ButtonRightBlock[2].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
-                ButtonRightBlock[2].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
-
-                selectRightBlock[2].gameObject.SetActive(true);
-
-                ButtonRightBlock[2].gameObject.SetActive(true);
-                ButtonRightBlock[2].GetComponentInChildren<TMP_Text>().text = choice.text;
-                ButtonRightBlock[2].onClick.AddListener(() => OnClickChoiceButton(choice));
+                buttonBlock = ButtonRightBlock[2];
+                selectBlock = selectRightBlock[2];
             }
             else if (choice.tags.Contains("insight") || choice.tags.Contains("another") || choice.tags.Contains("question") && questionCounter == 0)
             {
-                ButtonLeftBlock[0].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
-                ButtonLeftBlock[0].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
-
-
-                selectLeftBlock[0].gameObject.SetActive(true);
-
-                ButtonLeftBlock[0].gameObject.SetActive(true);
-                ButtonLeftBlock[0].GetComponentInChildren<TMP_Text>().text = choice.text;
-                ButtonLeftBlock[0].onClick.AddListener(() => OnClickChoiceButton(choice));
+                buttonBlock = ButtonLeftBlock[0];
+                selectBlock = selectLeftBlock[0];
             }
             else if (choice.tags.Contains("sattellite") && satteliteCounter == 0 || choice.tags.Contains("asking") || choice.tags.Contains("question") && questionCounter == 1)
             {
-                ButtonLeftBlock[1].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
-                ButtonLeftBlock[1].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
-
-                selectLeftBlock[1].gameObject.SetActive(true);
-
-                ButtonLeftBlock[1].gameObject.SetActive(true);
-                ButtonLeftBlock[1].GetComponentInChildren<TMP_Text>().text = choice.text;
-                ButtonLeftBlock[1].onClick.AddListener(() => OnClickChoiceButton(choice));
+                buttonBlock = ButtonLeftBlock[1];
+                selectBlock = selectLeftBlock[1];
             }
             else if (choice.tags.Contains("flirt") || choice.tags.Contains("question") && questionCounter == 2)
             {
-                ButtonLeftBlock[2].GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
-                ButtonLeftBlock[2].GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
+                buttonBlock = ButtonLeftBlock[2];
+                selectBlock = selectLeftBlock[2];
+            }
 
-                selectLeftBlock[2].gameObject.SetActive(true);
+            if (buttonBlock && selectBlock)
+            {
+                buttonBlock.GetComponent<HoverChecker>().OnButtonHover += HoverHandler;
+                buttonBlock.GetComponent<HoverChecker>().OnButtonHoverEnd += HoverEndHandler;
 
-                ButtonLeftBlock[2].gameObject.SetActive(true);
-                ButtonLeftBlock[2].GetComponentInChildren<TMP_Text>().text = choice.text;
-                ButtonLeftBlock[2].onClick.AddListener(() => OnClickChoiceButton(choice));
+                selectBlock.gameObject.SetActive(true);
+
+                buttonBlock.gameObject.SetActive(true);
+                buttonBlock.GetComponentInChildren<TMP_Text>().text = choice.text;
+                buttonBlock.onClick.AddListener(() => OnClickChoiceButton(choice));
             }
 
             if (choice.tags.Contains("question"))
