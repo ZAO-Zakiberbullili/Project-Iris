@@ -6,7 +6,7 @@ public class InitPrologue : MonoBehaviour
 
     void Start()
     {
-        Instantiate(player, new Vector3(Game.current.player.x, Game.current.player.y, 0), Quaternion.identity);
+        Instantiate(player, new Vector3(SaveData.data.player.x, SaveData.data.player.y, 0), Quaternion.identity);
 
         Time.timeScale = 1;
     }

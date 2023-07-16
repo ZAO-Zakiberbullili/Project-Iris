@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,9 @@ public class PlayerMove : MonoBehaviour
     {
         transform.position += Time.deltaTime * _moveSpeed * new Vector3(_currentMove.x, _currentMove.y, 0f);
         
-        Game.current.player.x = transform.position.x;
-        Game.current.player.y = transform.position.y;
+        // for testing purposes: saving should be less often
+        SaveData.data.player.x = transform.position.x;
+        SaveData.data.player.y = transform.position.y;
+        SaveData.data.saveTime = DateTime.Now;
     }
 }
