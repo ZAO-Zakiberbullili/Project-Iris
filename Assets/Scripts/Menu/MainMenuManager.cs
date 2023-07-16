@@ -16,7 +16,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start() 
     {
-        SaveManager.Load();
+        SaveManager.Instance.Load();
     }
 
     public void Continue()
@@ -28,7 +28,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void NewGame()
     {
-        SaveManager.CreateSave();
+        SaveManager.Instance.CreateSave();
         
         SceneManager.LoadScene("Prologue");
     }
@@ -40,7 +40,7 @@ public class MainMenuManager : MonoBehaviour
 
         for (int n = 0; n < 3; n++)
         {
-            DateTime saveCreationTime = SaveManager.GetSaveCreationTime(n);
+            DateTime saveCreationTime = SaveManager.Instance.GetSaveCreationTime(n);
             if (saveCreationTime == DateTime.MinValue)
             {
                 loadButtonTexts[n].text = "Create new save";
@@ -57,7 +57,7 @@ public class MainMenuManager : MonoBehaviour
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
 
-        SaveManager.LoadSave(0);
+        SaveManager.Instance.LoadSave(0);
 
         SceneManager.LoadScene("Prologue");
     }
@@ -67,7 +67,7 @@ public class MainMenuManager : MonoBehaviour
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
 
-        SaveManager.LoadSave(1);
+        SaveManager.Instance.LoadSave(1);
 
         SceneManager.LoadScene("Prologue");
     }
@@ -77,14 +77,14 @@ public class MainMenuManager : MonoBehaviour
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
 
-        SaveManager.LoadSave(2);
+        SaveManager.Instance.LoadSave(2);
 
         SceneManager.LoadScene("Prologue");
     }
 
     public void Quit()
     {
-        SaveManager.Save();
+        SaveManager.Instance.Save();
 
         Application.Quit();
 

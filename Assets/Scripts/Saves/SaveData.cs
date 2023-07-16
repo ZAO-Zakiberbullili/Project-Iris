@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData 
 {
-    public static SaveData data;
+    public SaveData data;
     public Player player;
     public DateTime saveTime;
 

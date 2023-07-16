@@ -30,7 +30,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void SaveGame()
     {
-        SaveManager.Save();
+        SaveManager.Instance.Save();
 
         // TODO: add some effect or text to show that game is saved
     }
@@ -48,7 +48,7 @@ public class PauseMenuManager : MonoBehaviour
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
 
-        SaveManager.LoadSave(0);
+        SaveManager.Instance.LoadSave(0);
     }
 
     public void LoadGame2()
@@ -56,7 +56,7 @@ public class PauseMenuManager : MonoBehaviour
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
 
-        SaveManager.LoadSave(1);
+        SaveManager.Instance.LoadSave(1);
     }
 
     public void LoadGame3()
@@ -64,19 +64,19 @@ public class PauseMenuManager : MonoBehaviour
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
 
-        SaveManager.LoadSave(2);
+        SaveManager.Instance.LoadSave(2);
     }
 
     public void ExitToMainMenu()
     {
-        SaveManager.Save();
+        SaveManager.Instance.Save();
 
         SceneManager.LoadScene("MainMenu");
     }
 
     public void Quit()
     {
-        SaveManager.Save();
+        SaveManager.Instance.Save();
 
         Application.Quit();
 

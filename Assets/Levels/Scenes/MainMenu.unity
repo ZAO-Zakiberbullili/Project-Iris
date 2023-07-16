@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1835644450}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: LoadGame3
+        m_MethodName: LoadThirdSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2018,7 +2018,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1835644450}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: LoadGame2
+        m_MethodName: LoadSecondSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2152,7 +2152,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1835644450}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: LoadGame1
+        m_MethodName: LoadFirstSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2235,6 +2235,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttons: {fileID: 2122794234}
   _loadbuttons: {fileID: 2147033392}
+  loadButtonTexts:
+  - {fileID: 1842292024}
+  - {fileID: 981704509}
+  - {fileID: 413514185}
 --- !u!114 &1835644451
 MonoBehaviour:
   m_ObjectHideFlags: 0

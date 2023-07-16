@@ -7,51 +7,72 @@ using UnityEngine;
 
 public class SaveManager
 {
-    public static List<SaveData> Saves = new List<SaveData>();
-    public static int SavesCount => Saves.Count;
+    public List<SaveData> Saves = new List<SaveData>();
+    private SaveData currentSaveData;
 
-    public static void Save() 
+    public void Save()
     {
         string filePath = Path.Combine(Application.persistentDataPath, "Saves.zao");
         FileStream file = File.Create(filePath);
         BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, SaveManager.Saves);
+        bf.Serialize(file, Saves);
         file.Close();
     }
 
-    public static void Load() 
+    public void Load()
     {
         string filePath = Path.Combine(Application.persistentDataPath, "Saves.zao");
-        if (File.Exists(filePath)) {
-            FileStream file = File.Open(Application.persistentDataPath + "/Saves.zao", FileMode.Open);
+        if (File.Exists(filePath))
+        {
+            FileStream file = File.Open(filePath, FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
-            SaveManager.Saves = (List<SaveData>)bf.Deserialize(file);
+            Saves = (List<SaveData>)bf.Deserialize(file);
             file.Close();
         }
     }
 
-    public static void CreateSave()
+    public void CreateSave()
     {
+        // todo: if there are more than 3 saves 
+
         SaveData newSave = new SaveData();
-        SaveData.data = newSave;
+        currentSaveData = newSave;
         Saves.Add(newSave);
     }
 
-    public static DateTime GetSaveCreationTime(int n)
+    public DateTime GetSaveCreationTime(int n)
     {
-        if (n < SavesCount)
+        if (n < Saves.Count)
         {
             return Saves[n].saveTime;
         }
-        else 
+        else
         {
             return DateTime.MinValue;
         }
-        ;
     }
 
-    public static void LoadSave(int n)
+    public void LoadSave(int n)
     {
-        SaveData.data = Saves[n];
+        currentSaveData = Saves[n];
+    }
+
+    public SaveData GetCurrentSaveData()
+    {
+        return currentSaveData;
+    }
+
+    // Singleton pattern
+    private static SaveManager instance;
+    public static SaveManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new SaveManager();
+            }
+            return instance;
+        }
     }
 }
