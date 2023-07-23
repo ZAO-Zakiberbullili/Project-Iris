@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        _currentMove = context.ReadValue<Vector2>();
+        _currentMove = context.ReadValue<Vector2>().normalized;
     }
     
     void Update()
