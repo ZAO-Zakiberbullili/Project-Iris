@@ -12,14 +12,13 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _pauseButton;
 
-    [SerializeField] private GameObject _buttons;
-    [SerializeField] private GameObject _loadbuttons;
-
     public void Pause()
     {
         Time.timeScale = 0f;
         _pauseMenu.SetActive(true);
         _pauseButton.SetActive(false);
+
+        SaveGame();
     }
 
     public void Continue()
@@ -38,48 +37,9 @@ public class PauseMenuManager : MonoBehaviour
         // TODO: add some effect or text to show that game is saved
     }
 
-    public void LoadGame()
-    {
-        _buttons.SetActive(false);
-        _loadbuttons.SetActive(true);
-    }
-
-    // todo: rewrite load buttons like in MainMenuManager.cs
-
-    public void LoadGame1()
-    {   
-        _loadbuttons.SetActive(false);
-        _buttons.SetActive(true);
-
-        SaveManager.Instance.LoadSave(0);
-    }
-
-    public void LoadGame2()
-    {   
-        _loadbuttons.SetActive(false);
-        _buttons.SetActive(true);
-
-        SaveManager.Instance.LoadSave(1);
-    }
-
-    public void LoadGame3()
-    {   
-        _loadbuttons.SetActive(false);
-        _buttons.SetActive(true);
-
-        SaveManager.Instance.LoadSave(2);
-    }
-
-    public void ExitToMainMenu()
-    {
-        SaveManager.Instance.Save();
-
-        SceneManager.LoadScene("MainMenu");
-    }
-
     public void Quit()
     {
-        SaveManager.Instance.Save();
+        SaveGame();
 
         Application.Quit();
 
