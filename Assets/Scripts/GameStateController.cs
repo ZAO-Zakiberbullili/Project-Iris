@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-// [DefaultExecutionOrder(-100)]
+
 public class GameStateController : MonoBehaviour
 {
     private static GameStateController _instance;
@@ -27,6 +27,7 @@ public class GameStateController : MonoBehaviour
         Normal,
         Pause,
         Dialogue,
+        Battle,
     }
 
     private GameState _currentState;

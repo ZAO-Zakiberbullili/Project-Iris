@@ -33,11 +33,31 @@ public class SaveManager
 
     public void CreateSave()
     {
-        // todo: if there are more than 3 saves 
-
         SaveData newSave = new SaveData();
         currentSaveData = newSave;
-        Saves.Add(newSave);
+
+        if (Saves.Count < 3)
+        {
+            Saves.Add(newSave);
+        }
+        else
+        {
+            DateTime leastRecentsaveTime = Saves[0].saveTime;
+            SaveData oldestSave = Saves[0];
+
+            foreach (SaveData data in Saves)
+            {
+                if (leastRecentsaveTime > data.saveTime)
+                {
+                    leastRecentsaveTime = data.saveTime;
+                    oldestSave = data;
+                }
+            }
+
+            Saves.Remove(oldestSave);
+            
+            Saves.Add(newSave);
+        }
     }
 
     public TimeSpan GetPlayTime(int n)
@@ -52,7 +72,7 @@ public class SaveManager
         }
     }
 
-    public DateTime GetSaveCreationTime(int n)
+    public DateTime GetSaveTime(int n)
     {
         if (n < Saves.Count)
         {
@@ -64,9 +84,28 @@ public class SaveManager
         }
     }
 
+    public void PickMostRecentSave()
+    {
+        DateTime mostRecentsaveTime = DateTime.MinValue;
+
+        foreach (SaveData data in Saves)
+        {
+            if (mostRecentsaveTime < data.saveTime)
+            {
+                mostRecentsaveTime = data.saveTime;
+                currentSaveData = data;
+            }
+        }
+    }
+
     public void LoadSave(int n)
     {
         currentSaveData = Saves[n];
+    }
+
+    public void DeleteSave(int n)
+    {
+        Saves.Remove(Saves[n]);
     }
 
     public SaveData GetCurrentSaveData()
