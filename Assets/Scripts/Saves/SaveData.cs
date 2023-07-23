@@ -4,14 +4,14 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData 
 {
-    public SaveData data;
     public Player player;
+    public TimeSpan playTime;
     public DateTime saveTime;
 
     public SaveData()
     {
-        data = this;
         player = new Player();
+        playTime = TimeSpan.Zero;
         saveTime = DateTime.Now;
     }
 }

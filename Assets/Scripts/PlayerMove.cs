@@ -18,9 +18,12 @@ public class PlayerMove : MonoBehaviour
     {
         transform.position += Time.deltaTime * _moveSpeed * new Vector3(_currentMove.x, _currentMove.y, 0f);
         
-        // for testing purposes: saving should be less often
+        SavePlayerPosition();   // for testing purposes: saving should be less often
+    }
+
+    public void SavePlayerPosition()
+    {
         SaveManager.Instance.GetCurrentSaveData().player.x = transform.position.x;
         SaveManager.Instance.GetCurrentSaveData().player.y = transform.position.y;
-        SaveManager.Instance.GetCurrentSaveData().saveTime = DateTime.Now;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -30,6 +31,8 @@ public class PauseMenuManager : MonoBehaviour
 
     public void SaveGame()
     {
+        SaveManager.Instance.GetCurrentSaveData().playTime += (DateTime.Now - SaveManager.Instance.GetCurrentSaveData().saveTime);
+        SaveManager.Instance.GetCurrentSaveData().saveTime = DateTime.Now;
         SaveManager.Instance.Save();
 
         // TODO: add some effect or text to show that game is saved

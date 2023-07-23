@@ -40,6 +40,18 @@ public class SaveManager
         Saves.Add(newSave);
     }
 
+    public TimeSpan GetPlayTime(int n)
+    {
+        if (n < Saves.Count)
+        {
+            return Saves[n].playTime;
+        }
+        else
+        {
+            return TimeSpan.Zero;
+        }
+    }
+
     public DateTime GetSaveCreationTime(int n)
     {
         if (n < Saves.Count)

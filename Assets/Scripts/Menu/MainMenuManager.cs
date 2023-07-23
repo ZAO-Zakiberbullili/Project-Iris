@@ -40,6 +40,7 @@ public class MainMenuManager : MonoBehaviour
 
         for (int n = 0; n < 3; n++)
         {
+            TimeSpan playTime = SaveManager.Instance.GetPlayTime(n);
             DateTime saveCreationTime = SaveManager.Instance.GetSaveCreationTime(n);
             if (saveCreationTime == DateTime.MinValue)
             {
@@ -47,7 +48,9 @@ public class MainMenuManager : MonoBehaviour
             }
             else
             {
-                loadButtonTexts[n].text = "Load game: save created at " + saveCreationTime.ToString();
+                // todo: show playtime, player level, location image, location name, saveCreationTime
+                // player level, location image, location name are not present at the moment
+                loadButtonTexts[n].text = "Load game: played for " + playTime.ToString() + ", saved at " + saveCreationTime.ToString();
             }
         }
     }
