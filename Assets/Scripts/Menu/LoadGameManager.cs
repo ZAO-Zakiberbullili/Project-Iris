@@ -16,8 +16,17 @@ public class LoadGameManager : MonoBehaviour
     [SerializeField] private GameObject[] _confirmDeleteButtons;
     [SerializeField] private GameObject[] _cancelDeleteButtons;
 
+    [Header("Only for MainMenu")]
+    [SerializeField] private GameObject _continueButton;
+
+    public static bool loadMenuActive = false;
+
     public void LoadGame()
-    {
+    { 
+        SaveManager.Instance.Load();
+
+        loadMenuActive = true;
+
         _buttons.SetActive(false);
         _loadbuttons.SetActive(true);
         foreach (GameObject confirmButton in _confirmDeleteButtons)
@@ -43,10 +52,13 @@ public class LoadGameManager : MonoBehaviour
             {
                 // todo: also show player level, location image, location name
                 loadButtonTexts[n].text = "Load game:" + "\n" + "Played for " + playTime.ToString() + ", saved at " + saveTime.ToString();
+
+                _deleteButtons[n].SetActive(true);
             }
         }
     }
 
+#region DeleteSaves
     public void DeleteFirstSave() => DeleteSave(0);
     public void DeleteSecondSave() => DeleteSave(1);
     public void DeleteThirdSave() => DeleteSave(2);
@@ -69,14 +81,7 @@ public class LoadGameManager : MonoBehaviour
     public void ConfirmSaveDeletion(int n)
     {
         SaveManager.Instance.DeleteSave(n);
-
         SaveManager.Instance.Save();
-        SaveManager.Instance.Load();
-
-        loadButtonTexts[n].text = "Create new save";
-
-        _confirmDeleteButtons[n].SetActive(false);
-        _cancelDeleteButtons[n].SetActive(false);
 
         LoadGame();
     }
@@ -87,6 +92,7 @@ public class LoadGameManager : MonoBehaviour
         _confirmDeleteButtons[n].SetActive(false);
         _cancelDeleteButtons[n].SetActive(false);
     }
+#endregion
 
     public void LoadFirstSave() => LoadSave(0);
     public void LoadSecondSave() => LoadSave(1);
@@ -94,6 +100,8 @@ public class LoadGameManager : MonoBehaviour
 
     public void LoadSave(int n)
     {
+        loadMenuActive = false;
+
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
 
@@ -106,19 +114,29 @@ public class LoadGameManager : MonoBehaviour
             SaveManager.Instance.LoadSave(n);
         }
 
-        SceneManager.LoadScene("Prologue");
+        SceneReloader.NextScene = "Prologue";
+        SceneManager.LoadScene("IntermediateScene");
     }
 
-    public void BackToMenu()
+    public void BackToPreviousMenu()
     {
+        loadMenuActive = false;
+
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
+
+        if (SaveManager.Instance.SavesCount == 0)
+        {
+            _continueButton?.SetActive(false);
+        }
     }
 
     public void LoadMainMenu()
     {
-        SaveManager.Instance.GetCurrentSaveData().playTime += (DateTime.Now - SaveManager.Instance.GetCurrentSaveData().saveTime);
-        SaveManager.Instance.GetCurrentSaveData().saveTime = DateTime.Now;
+        loadMenuActive = false;
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().SavePlayerPosition();
+        SaveManager.Instance.GetCurrentSaveData().UpdatePlayTime();
         SaveManager.Instance.Save();
 
         SceneManager.LoadScene("MainMenu");

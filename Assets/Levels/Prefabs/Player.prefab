@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3936826674002169674}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +164,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b591c953-3bee-4fda-ac48-63d905efbf12
     m_ActionName: Movement/Move[/Keyboard/a,/Keyboard/d,/Keyboard/s,/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e6a10d2a-20be-4357-b979-b0c66b6f9931
+    m_ActionName: Menu/Escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1f89fab-3f86-4d32-b4a3-033a04add6a1
+    m_ActionName: Interaction/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement

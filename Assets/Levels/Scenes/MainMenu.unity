@@ -4372,9 +4372,9 @@ GameObject:
   - component: {fileID: 1835644453}
   - component: {fileID: 1835644452}
   - component: {fileID: 1835644451}
+  - component: {fileID: 1835644455}
   - component: {fileID: 1835644450}
   - component: {fileID: 1835644456}
-  - component: {fileID: 1835644455}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4394,6 +4394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed22e4d5a89859f458a7032dac1fa335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _continueButton: {fileID: 2063217429}
 --- !u!114 &1835644451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4562,6 +4563,7 @@ MonoBehaviour:
   - {fileID: 1108762005}
   - {fileID: 845685958}
   - {fileID: 795437208}
+  _continueButton: {fileID: 2063217429}
 --- !u!1 &1842292022
 GameObject:
   m_ObjectHideFlags: 0
@@ -5391,7 +5393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1835644456}
         m_TargetAssemblyTypeName: LoadGameManager, Assembly-CSharp
-        m_MethodName: BackToMainMenu
+        m_MethodName: BackToPreviousMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5457,7 +5459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2063217430
 RectTransform:
   m_ObjectHideFlags: 0

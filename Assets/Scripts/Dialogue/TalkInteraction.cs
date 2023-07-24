@@ -52,7 +52,7 @@ public class TalkInteraction : InteractionHandler
         if (!_story)
             _story = new Story(_inkJsonAsset.text);
         
-        // GameStateController.Instance.ChangeGameState(GameStateController.GameState.Dialogue);
+        // GameStateController.Instance.ChangeGameState(GameState.Dialogue);
         DisplayNextLine();
     }
 
@@ -69,7 +69,7 @@ public class TalkInteraction : InteractionHandler
         if (!_story.canContinue && _story.currentChoices.Count == 0)
         {
             _dialogue.gameObject.SetActive(false);
-            GameStateController.Instance.ChangeGameState(GameStateController.GameState.Normal);
+            GameStateController.Instance.ChangeGameState(GameState.Normal);
             _story = null;
             return;
         }

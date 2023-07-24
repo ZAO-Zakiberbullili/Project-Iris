@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine;
+using UnityEditor;
 
 public class SaveManager
 {
     public List<SaveData> Saves = new List<SaveData>();
+    public int SavesCount { get { return Saves.Count; } }
     private SaveData currentSaveData;
 
     public void Save()
@@ -36,7 +38,7 @@ public class SaveManager
         SaveData newSave = new SaveData();
         currentSaveData = newSave;
 
-        if (Saves.Count < 3)
+        if (SavesCount < 3)
         {
             Saves.Add(newSave);
         }
@@ -62,7 +64,7 @@ public class SaveManager
 
     public TimeSpan GetPlayTime(int n)
     {
-        if (n < Saves.Count)
+        if (n < SavesCount)
         {
             return Saves[n].playTime;
         }
@@ -74,7 +76,7 @@ public class SaveManager
 
     public DateTime GetSaveTime(int n)
     {
-        if (n < Saves.Count)
+        if (n < SavesCount)
         {
             return Saves[n].saveTime;
         }
@@ -107,7 +109,6 @@ public class SaveManager
     {
         Saves.Remove(Saves[n]);
     }
-
     public SaveData GetCurrentSaveData()
     {
         return currentSaveData;

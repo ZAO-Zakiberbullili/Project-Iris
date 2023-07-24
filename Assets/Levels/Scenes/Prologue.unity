@@ -895,7 +895,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 312093162}
         m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
-        m_MethodName: Pause
+        m_MethodName: TogglePauseContinue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1035,6 +1035,7 @@ MonoBehaviour:
   - {fileID: 222607232}
   - {fileID: 674849463}
   - {fileID: 1833593718}
+  _continueButton: {fileID: 0}
 --- !u!114 &312093162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,7 +1674,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 312093161}
         m_TargetAssemblyTypeName: LoadGameManager, Assembly-CSharp
-        m_MethodName: BackToMenu
+        m_MethodName: BackToPreviousMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

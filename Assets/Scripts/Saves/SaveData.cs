@@ -14,4 +14,10 @@ public class SaveData
         playTime = TimeSpan.Zero;
         saveTime = DateTime.Now;
     }
+
+    public void UpdatePlayTime()
+    {
+        playTime += (DateTime.Now - saveTime);
+        saveTime = DateTime.Now;
+    }
 }

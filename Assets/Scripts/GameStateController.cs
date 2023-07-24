@@ -3,54 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateController : MonoBehaviour
+public class GameStateController
 {
     private static GameStateController _instance;
-    static public GameStateController Instance
+    public static GameStateController Instance
     {
         get
         {
             if (_instance == null)
             {
-                _instance = FindObjectOfType<GameStateController>();
-                Debug.Log(_instance);
+                _instance = new GameStateController();
             }
             return _instance;
         }
-        private set
-        {
-            _instance = value;
-        }
     }
-    public enum GameState
-    {
-        Normal,
-        Pause,
-        Dialogue,
-        Battle,
-    }
-
+    
     private GameState _currentState;
 
     public GameState CurrentState => _currentState;
-    private InputSystem _inputSystem;
     public Action<GameState> OnGameStateChanged;
-
-    private void Awake()
-    {
-        Instance = this;
-        _inputSystem = new InputSystem();
-    }
-
-    private void OnEnable()
-    {
-        _inputSystem.Enable();
-    }
-    private void OnDisable()
-    {
-        _inputSystem.Disable();
-    }
-
 
     public void ChangeGameState(GameState newState)
     {
@@ -59,20 +30,20 @@ public class GameStateController : MonoBehaviour
         switch (newState)
         {
             case GameState.Normal:
-                _inputSystem.Move.Enable();
-                _inputSystem.Attack.Enable();
-
                 break;
             case GameState.Dialogue:
-                _inputSystem.Move.Disable();
-                _inputSystem.Attack.Disable();
-
                 break;
             case GameState.Pause:
-
                 break;
         }
 
         OnGameStateChanged?.Invoke(newState);
     }
+}
+
+public enum GameState
+{
+    Normal,
+    Pause,
+    Dialogue,
 }

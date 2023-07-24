@@ -17,8 +17,6 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         transform.position += Time.deltaTime * _moveSpeed * new Vector3(_currentMove.x, _currentMove.y, 0f);
-        
-        SavePlayerPosition();   // for testing purposes: saving should be less often
     }
 
     public void SavePlayerPosition()
