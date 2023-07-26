@@ -14,7 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: Assets Table
   m_TableCollectionNameGuidString: 0213116269ca468409314f5533509f6d
-  m_Entries: []
+  m_Entries:
+  - m_Id: 684156343631872
+    m_Key: Prologue/Main Camera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 684420475731968
+    m_Key: Prologue/Main Camera 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 684445297623040
+    m_Key: Prologue/Main Camera 2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
