@@ -42,6 +42,38 @@ MonoBehaviour:
     m_Localized: Continuar
     m_Metadata:
       m_Items: []
+  - m_Id: 628240399286272
+    m_Localized: "Salir al men\xFA principal"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628189711122432
+    m_Localized: Guardar partida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628971739103232
+    m_Localized: Borrar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629105130553344
+    m_Localized: Confirmar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629107634552832
+    m_Localized: Cancelar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 636285812555776
+    m_Localized: 'Cargar partida: Jugado durante {0}, guardado en {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 636213167210496
+    m_Localized: Crear nueva partida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646366276960256
+    m_Localized: "Atr\xE1s"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

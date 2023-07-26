@@ -20,11 +20,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4646845628416
-    m_Key: MainMenu/Canvas/Buttons/Load game/Text (TMP)
+    m_Key: Load game
     m_Metadata:
       m_Items: []
   - m_Id: 4694677471232
-    m_Key: MainMenu/Canvas/Buttons/Quit/Text (TMP)
+    m_Key: Quit
     m_Metadata:
       m_Items: []
   - m_Id: 4882322243584
@@ -36,7 +36,39 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 11376761585664
-    m_Key: MainMenu/Canvas/Buttons/Continue/Text (TMP)
+    m_Key: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628189711122432
+    m_Key: Prologue/Canvas/PauseMenu/Save game/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628240399286272
+    m_Key: Prologue/Canvas/PauseMenu/Exit to main menu/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628971739103232
+    m_Key: Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629105130553344
+    m_Key: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629107634552832
+    m_Key: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 636213167210496
+    m_Key: Create new save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 636285812555776
+    m_Key: Load save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646366276960256
+    m_Key: Back
     m_Metadata:
       m_Items: []
   m_Metadata:

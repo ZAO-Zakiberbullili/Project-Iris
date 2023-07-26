@@ -5,6 +5,8 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization; 
+using UnityEngine.Localization.Settings; 
 using TMPro;
 
 public class LoadGameManager : MonoBehaviour
@@ -44,14 +46,19 @@ public class LoadGameManager : MonoBehaviour
             DateTime saveTime = SaveManager.Instance.GetSaveTime(n);
             if (saveTime == DateTime.MinValue)
             {
-                loadButtonTexts[n].text = "Create new save";
+                loadButtonTexts[n].text = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("Create new save").Result;
 
                 _deleteButtons[n].SetActive(false);
             }
             else
             {
                 // todo: also show player level, location image, location name
-                loadButtonTexts[n].text = "Load game:" + "\n" + "Played for " + playTime.ToString() + ", saved at " + saveTime.ToString();
+                loadButtonTexts[n].text = string.Format(
+                    LocalizationSettings.StringDatabase.GetLocalizedStringAsync("Load save").Result,
+                    // localization doesn't process \n correctly
+                    playTime.ToString(),
+                    saveTime.ToString()
+                );
 
                 _deleteButtons[n].SetActive(true);
             }
@@ -105,7 +112,7 @@ public class LoadGameManager : MonoBehaviour
         _loadbuttons.SetActive(false);
         _buttons.SetActive(true);
 
-        if (loadButtonTexts[n].text == "Create new save")
+        if (loadButtonTexts[n].text == LocalizationSettings.StringDatabase.GetLocalizedStringAsync("Create new save").Result)
         {
             SaveManager.Instance.CreateSave();
         } 

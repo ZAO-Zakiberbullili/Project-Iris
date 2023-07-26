@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b1ea861ad2dd3c048ac993913d9f5467
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bad Comic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ccd40d442556d5540b5144e9116506e1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
