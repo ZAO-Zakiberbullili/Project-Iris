@@ -16,7 +16,11 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 84aea54c0a24d9044a61283d02668e61
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: af5ee1d34daac417ba4105ad11a31b29
+    m_Address: Assets/Levels/Scenes/CharacterRedact.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5fc2d37b866caa44ab6bf501ac2460bd, type: 2}
   m_SchemaSet:
