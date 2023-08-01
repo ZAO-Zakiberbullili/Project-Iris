@@ -17,7 +17,7 @@ public class TemporaryDialogue : InteractionHandler
     private Coroutine _ieFadeout = null;
 
 
-    override public void Interaction()
+    override public void Interaction(GameObject playerGameObject, GameObject otherGameObject)
     {
         StartDialogue();
     }

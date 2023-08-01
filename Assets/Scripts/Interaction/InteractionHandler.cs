@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class InteractionHandler : MonoBehaviour
 {
-    virtual public void Interaction() { }
+    virtual public void Interaction(GameObject playerGameObject, GameObject otherGameObject) { }
 }

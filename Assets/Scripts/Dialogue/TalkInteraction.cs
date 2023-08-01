@@ -46,7 +46,7 @@ public class TalkInteraction : InteractionHandler
         ButtonRightBlock = _choiceButtonContainerRight.GetComponentsInChildren<Button>(true);
     }
 
-    override public void Interaction()
+    override public void Interaction(GameObject playerGameObject, GameObject otherGameObject)
     {
       
         if (!_story)

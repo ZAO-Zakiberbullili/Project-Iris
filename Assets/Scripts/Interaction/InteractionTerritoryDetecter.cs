@@ -12,6 +12,7 @@ public class InteractionTerritoryDetecter : MonoBehaviour
         {
             if (!_alreadyInteract)
             {
+                collision.gameObject.GetComponent<Interaction>().InteractionGameObject = gameObject;
                 _interaction.OnInteract += _interactionHandler.Interaction;
                 _alreadyInteract = true;
             }
@@ -24,6 +25,7 @@ public class InteractionTerritoryDetecter : MonoBehaviour
         {
             if (_alreadyInteract)
             {
+                collision.gameObject.GetComponent<Interaction>().InteractionGameObject = null;
                 _interaction.OnInteract -= _interactionHandler.Interaction;
                 _alreadyInteract = false;
             }
