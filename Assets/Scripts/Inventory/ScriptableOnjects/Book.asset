@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3829fd5d42b63ab4897ea35389b7b85f, type: 3}
-  m_Name: Test Item 1
+  m_Name: Book
   m_EditorClassIdentifier: 
   ID: 0
   DisplayName: Test item 1
-  Description: This is test Elem
-  Icon: {fileID: 0}
+  Description: This is a fucking Book, Idiot !
+  Icon: {fileID: 144807792, guid: 872afbf314ff13043b55cf460f1d69d9, type: 3}
   MaxStackSize: 5
