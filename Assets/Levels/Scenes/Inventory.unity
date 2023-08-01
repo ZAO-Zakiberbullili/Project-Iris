@@ -2593,10 +2593,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlot_UI
       objectReference: {fileID: 0}
-    - target: {fileID: 486767003510391976, guid: 5859b13a45621574ab06268ca713a107, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3569127157662774334, guid: 5859b13a45621574ab06268ca713a107, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2680,10 +2676,6 @@ PrefabInstance:
     - target: {fileID: 3569127157662774334, guid: 5859b13a45621574ab06268ca713a107, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9079268605551290972, guid: 5859b13a45621574ab06268ca713a107, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5859b13a45621574ab06268ca713a107, type: 3}
