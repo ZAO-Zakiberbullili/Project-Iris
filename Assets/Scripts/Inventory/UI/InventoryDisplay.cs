@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public abstract class InventoryDisplay : MonoBehaviour
 {
-    [SerializeField] MouseItemData _mouseItemData;
+    [SerializeField] MouseItemData _mouseInventoryItem;
 
     protected InventorySystem inventorySystem;
     protected Dictionary<InventorySlot_UI, InventorySlot> slotDictionary;
@@ -29,8 +29,21 @@ public abstract class InventoryDisplay : MonoBehaviour
         }
     }    
 
-    public void SlotClicked(InventorySlot_UI clickedSlot)
+    public void SlotClicked(InventorySlot_UI clickedUISlot)
     {
-        
+        if (clickedUISlot.AssignedInventorySlot.ItemData != null && _mouseInventoryItem.AssidnedInventorySlot.ItemData == null)
+        {
+            _mouseInventoryItem.UpdateMouseSlot(clickedUISlot.AssignedInventorySlot);
+            clickedUISlot.ClearSlot();
+            return;
+        }
+
+        if (clickedUISlot.AssignedInventorySlot.ItemData == null && _mouseInventoryItem.AssidnedInventorySlot.ItemData != null)
+        {
+            clickedUISlot.AssignedInventorySlot.AssignItem(_mouseInventoryItem.AssidnedInventorySlot);
+            clickedUISlot.UpdateUISlot();
+
+            _mouseInventoryItem.ClearSlot();
+        }
     }
 }
