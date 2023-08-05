@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.inkle.ink-unity-integration": {
-      "version": "1.1.7",
+      "version": "1.1.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -215,13 +215,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.scriptablebuildpipeline": {
-      "version": "1.20.1",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.render-pipelines.core": {
       "version": "12.1.10",
       "depth": 1,
@@ -242,6 +235,13 @@
         "com.unity.render-pipelines.core": "12.1.10",
         "com.unity.shadergraph": "12.1.10"
       }
+    },
+    "com.unity.scriptablebuildpipeline": {
+      "version": "1.20.1",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
     },
     "com.unity.searcher": {
       "version": "4.9.1",

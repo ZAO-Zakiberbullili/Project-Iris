@@ -927,7 +927,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1232037033
+--- !u!43 &1530933848
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1091,7 +1091,7 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!43 &2049349908
+--- !u!43 &1547269993
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 2059271504}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2495,11 +2495,7 @@ PrefabInstance:
     - target: {fileID: 7967197932640494229, guid: ca6252926f06b5d4aa5b4a0724ffc377, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1232037033}
-    - target: {fileID: 7967197932640494229, guid: ca6252926f06b5d4aa5b4a0724ffc377, type: 3}
-      propertyPath: m_InstanceId
-      value: 29020
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1530933848}
     - target: {fileID: 7967197932640494234, guid: ca6252926f06b5d4aa5b4a0724ffc377, type: 3}
       propertyPath: m_Name
       value: Player

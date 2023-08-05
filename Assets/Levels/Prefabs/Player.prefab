@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3936826674002169675}
   - component: {fileID: 3936826674002169668}
   - component: {fileID: 3936826674002169674}
+  - component: {fileID: 3128790778005820913}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -34,7 +35,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4907380528102182649}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -23562741
+  m_SortingLayerID: -1503269357
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -905562411, guid: 68d177c73d5eacb4188144a16d23d9b5, type: 3}
@@ -172,6 +174,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c1f89fab-3f86-4d32-b4a3-033a04add6a1
     m_ActionName: Interaction/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 28768ba5-acfe-4eb9-80b1-908bc5501bbe
+    m_ActionName: Movement/Jump
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
@@ -190,6 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
+  _tilemap: {fileID: 0}
+  _feet: {fileID: 4907380528102182649}
 --- !u!114 &3936826674002169675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,3 +258,66 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3128790778005820913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3936826674002169667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000002b575ae2
+  m_ShapePath:
+  - {x: -0.005102396, y: -1, z: 0}
+  - {x: -0.24010897, y: -0.94321966, z: 0}
+  - {x: -0.26904774, y: -0.7156458, z: 0}
+  - {x: -0.03448963, y: -0.61006737, z: 0}
+  - {x: 0.32077527, y: -0.692472, z: 0}
+  - {x: 0.3416326, y: -1.006599, z: 0}
+  m_ShapePathHash: -1183120659
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 47440
+  m_LocalBounds:
+    m_Center: {x: 0.036292434, y: -0.80833316, z: 0}
+    m_Extent: {x: 0.30534017, y: 0.19826579, z: 0}
+--- !u!1 &8976280949641094253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4907380528102182649}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4907380528102182649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8976280949641094253}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: -0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3936826674002169673}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

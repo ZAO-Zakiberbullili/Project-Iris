@@ -1,4 +1,4 @@
-#define PROLOGUE // to launch the game not from main menu
+// #define PROLOGUE // to launch the game not from main menu
 using UnityEngine;
 
 public class InitPrologue : MonoBehaviour 
@@ -12,7 +12,9 @@ public class InitPrologue : MonoBehaviour
         SaveManager.Instance.PickMostRecentSave();
 #endif
 
-        Instantiate(player, new Vector3(SaveManager.Instance.GetCurrentSaveData().player.x, SaveManager.Instance.GetCurrentSaveData().player.y, 0), Quaternion.identity);
+        GameObject clone = Instantiate(player, new Vector3(SaveManager.Instance.GetCurrentSaveData().player.x, SaveManager.Instance.GetCurrentSaveData().player.y, SaveManager.Instance.GetCurrentSaveData().player.z), Quaternion.identity);
+
+        clone.GetComponent<PlayerMove>().FindTileLayer();
 
         Time.timeScale = 1;
 

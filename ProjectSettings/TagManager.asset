@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Grid
   layers:
   - Default
   - TransparentFX
@@ -41,17 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
   - name: Player
-    uniqueID: 4271404555
+    uniqueID: 2791697939
     locked: 0
   - name: UI
-    uniqueID: 3031820685
-=======
-  - name: Buildings
-    uniqueID: 3483370821
-    locked: 0
-  - name: Player
-    uniqueID: 3797571371
->>>>>>> Isometric
+    uniqueID: 181774489
     locked: 0

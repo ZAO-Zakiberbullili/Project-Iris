@@ -25,9 +25,10 @@ public class PlayerMove : MonoBehaviour
 
     private bool sidebrick;
 
-    void Start()
+    void Awake()
     {
         sidebrick = false;
+        _tilemap = GameObject.FindGameObjectWithTag("Grid").GetComponent<Tilemap>();
     }
     
     void Update()
@@ -91,9 +92,31 @@ public class PlayerMove : MonoBehaviour
         }*/
     }
 
+    public void FindTileLayer()
+    {
+        if (_tilemap.GetTile(_tilemap.WorldToCell(_feet.position + new Vector3Int(0, 0, -1))))
+            {
+                transform.position += new Vector3(0f, 0f, -1f);
+            }
+        else if (_tilemap.GetTile(_tilemap.WorldToCell(_feet.position + new Vector3Int(0, 0, 1))))
+        {
+            transform.position += new Vector3(0f, 0f, 1f);
+        }
+    }
+
     public void SavePlayerPosition()
     {
         SaveManager.Instance.GetCurrentSaveData().player.x = transform.position.x;
         SaveManager.Instance.GetCurrentSaveData().player.y = transform.position.y;
+
+        if (transform.position.z == -1f || transform.position.z == 0f)
+        {
+            SaveManager.Instance.GetCurrentSaveData().player.z = transform.position.z;
+        }
+        else
+        {
+            SaveManager.Instance.GetCurrentSaveData().player.z = 0f;
+        }
+        
     }
 }
