@@ -45,5 +45,25 @@ public abstract class InventoryDisplay : MonoBehaviour
 
             _mouseInventoryItem.ClearSlot();
         }
+
+        if (clickedUISlot.AssignedInventorySlot.ItemData != null && _mouseInventoryItem.AssidnedInventorySlot.ItemData != null)
+        {
+            if (clickedUISlot.AssignedInventorySlot.ItemData != _mouseInventoryItem.AssidnedInventorySlot.ItemData)
+            {
+                SwapSlots(clickedUISlot);
+            }
+        }
+    }
+
+    private void SwapSlots(InventorySlot_UI clickedUISlot)
+    {
+        var clonesSlot = new InventorySlot(_mouseInventoryItem.AssidnedInventorySlot.ItemData, _mouseInventoryItem.AssidnedInventorySlot.StackSize);
+        _mouseInventoryItem.ClearSlot();
+
+        _mouseInventoryItem.UpdateMouseSlot(clickedUISlot.AssignedInventorySlot);
+        clickedUISlot.ClearSlot();
+
+        clickedUISlot.AssignedInventorySlot.AssignItem(clonesSlot);
+        clickedUISlot.UpdateUISlot();
     }
 }
