@@ -61,14 +61,14 @@ public abstract class InventoryDisplay : MonoBehaviour
         if (clickedUISlot.AssignedInventorySlot.ItemData != null && _mouseInventoryItem.AssidnedInventorySlot.ItemData != null)
         {
             bool isSameItem = clickedUISlot.AssignedInventorySlot.ItemData == _mouseInventoryItem.AssidnedInventorySlot.ItemData;
-            if (isSameItem && clickedUISlot.AssignedInventorySlot.RoomLeftInStack(_mouseInventoryItem.AssidnedInventorySlot.StackSize))
+            if (isSameItem && clickedUISlot.AssignedInventorySlot.EnoughRoomLeftInStack(_mouseInventoryItem.AssidnedInventorySlot.StackSize))
             {
                 clickedUISlot.AssignedInventorySlot.AssignItem(_mouseInventoryItem.AssidnedInventorySlot);
                 clickedUISlot.UpdateUISlot();
                 _mouseInventoryItem.ClearSlot();
                 return;
             }
-            else if (isSameItem && !clickedUISlot.AssignedInventorySlot.RoomLeftInStack(_mouseInventoryItem.AssidnedInventorySlot.StackSize, out int leftInStack)) 
+            else if (isSameItem && !clickedUISlot.AssignedInventorySlot.EnoughRoomLeftInStack(_mouseInventoryItem.AssidnedInventorySlot.StackSize, out int leftInStack)) 
             {
                 if (leftInStack < 1)
                     SwapSlots(clickedUISlot);
