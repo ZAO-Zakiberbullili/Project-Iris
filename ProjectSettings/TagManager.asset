@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Environment
+    uniqueID: 3943428803
+    locked: 0
+  - name: NPC
+    uniqueID: 3892769613
+    locked: 0
   - name: Player
     uniqueID: 2791697939
     locked: 0

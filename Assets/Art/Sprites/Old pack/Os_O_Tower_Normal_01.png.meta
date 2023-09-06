@@ -1,0 +1,717 @@
+fileFormatVersion: 2
+guid: 53486a9af1b877e46803a0a8e2172911
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 400
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fec4167a912efa4489bcfa3c47e7ac1
+      internalID: -1468729209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 416
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a808348dc652303488b88fdc9d3dd22e
+      internalID: -282598561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 416
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b93ea0333f4b1e4280fcc016f067d48
+      internalID: 1102679513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 408
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f2fb7f39a57724da7f0fa4172e1d31
+      internalID: -545009097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 408
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993951739cadc3b4cb347383b20e54b3
+      internalID: -82090997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_5
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 302
+        width: 106
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f4ae8fd6e536f44a3a6b5b4822de35
+      internalID: 1218634050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_6
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 376
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f8f84015da7e54db01406510522076
+      internalID: -1131215058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 272
+        width: 72
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4cb96767cf63f49894c44fdef07498
+      internalID: 1828398848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_8
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 336
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de8c423376b1a64fb2d71895b5df5ad
+      internalID: 749094225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_9
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 336
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ddfdd372a67c4429fba73867b0469b
+      internalID: 1026585709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b905921855c0cd24b9ac04c605666f02
+      internalID: 1816720789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 304
+        width: 35
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec7fae3453c5e14294c5e9b86a1c90b
+      internalID: -1445745208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 160
+        width: 73
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4572a8b04d61ad74aa1a01247fb2c0cd
+      internalID: 853347653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_13
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 160
+        width: 126
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d041c41decbf7da42b244c3f6d768bac
+      internalID: -889794397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_14
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 256
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6409e91889e24e94db1f80e7e6c1d612
+      internalID: -1575958103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_15
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 208
+        width: 12
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0bfac462e7aa04ba7003637105b763
+      internalID: 794613172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_16
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 208
+        width: 12
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabe7af3343af7a44920a3d570422586
+      internalID: -1195778756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_17
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 210
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b25a8080da40a4eb0e7b52a763a769
+      internalID: -1837111535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_18
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 215
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703590a1bc1dbb74fb7086fcef2ef843
+      internalID: -475091491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_19
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 176
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a306d8a61edc5d4687dd0d981e10e44
+      internalID: -1190656482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_20
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 144
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1624a19d882e8d4da887b67f890a2e1
+      internalID: -474010694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_21
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 144
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683463a6766736f42abf2b17344670fd
+      internalID: -1834758008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_22
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 160
+        width: 12
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3e0cf97774acc42b273c6c3f84857f
+      internalID: 1392571315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_23
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 160
+        width: 12
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867c8fadc18e4fd4eb3a0397cc364f6e
+      internalID: 1117702014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 32
+        width: 108
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2294854bb5455b42b77b196278dd6bf
+      internalID: -1244261072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_25
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 16
+        width: 126
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adefd48e47d5804d9f3af217af580b8
+      internalID: 1634519632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Os_O_Tower_Normal_01_26
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 16
+        width: 108
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506f388e46e3dbb4aacd9105e07311ae
+      internalID: -972416703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Os_O_Tower_Normal_01_0: -1468729209
+      Os_O_Tower_Normal_01_1: -282598561
+      Os_O_Tower_Normal_01_10: 1816720789
+      Os_O_Tower_Normal_01_11: -1445745208
+      Os_O_Tower_Normal_01_12: 853347653
+      Os_O_Tower_Normal_01_13: -889794397
+      Os_O_Tower_Normal_01_14: -1575958103
+      Os_O_Tower_Normal_01_15: 794613172
+      Os_O_Tower_Normal_01_16: -1195778756
+      Os_O_Tower_Normal_01_17: -1837111535
+      Os_O_Tower_Normal_01_18: -475091491
+      Os_O_Tower_Normal_01_19: -1190656482
+      Os_O_Tower_Normal_01_2: 1102679513
+      Os_O_Tower_Normal_01_20: -474010694
+      Os_O_Tower_Normal_01_21: -1834758008
+      Os_O_Tower_Normal_01_22: 1392571315
+      Os_O_Tower_Normal_01_23: 1117702014
+      Os_O_Tower_Normal_01_24: -1244261072
+      Os_O_Tower_Normal_01_25: 1634519632
+      Os_O_Tower_Normal_01_26: -972416703
+      Os_O_Tower_Normal_01_3: -545009097
+      Os_O_Tower_Normal_01_4: -82090997
+      Os_O_Tower_Normal_01_5: 1218634050
+      Os_O_Tower_Normal_01_6: -1131215058
+      Os_O_Tower_Normal_01_7: 1828398848
+      Os_O_Tower_Normal_01_8: 749094225
+      Os_O_Tower_Normal_01_9: 1026585709
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

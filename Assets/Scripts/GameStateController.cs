@@ -35,6 +35,8 @@ public class GameStateController
                 break;
             case GameState.Pause:
                 break;
+            case GameState.Battle:
+                break;
         }
 
         OnGameStateChanged?.Invoke(newState);
@@ -46,4 +48,5 @@ public enum GameState
     Normal,
     Pause,
     Dialogue,
+    Battle,
 }
